@@ -2,7 +2,7 @@
   "current": "Relaxialis",
   "presets": {
     "Relaxialis": {
-      "logo_width": 140,
+      "logo_width": 150,
       "color_schemes": {
         "scheme-1": {
           "settings": {
@@ -183,7 +183,8 @@
             "color_scheme": "scheme-1"
           }
         }
-      }
+      },
+      "logo": "shopify://shop_images/logo-relaxialis.png"
     }
   }
 }
