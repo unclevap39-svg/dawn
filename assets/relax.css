@@ -485,8 +485,9 @@ body {
   }
 
   .relax-compare thead th {
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    word-break: keep-all;
   }
 
   .relax-compare__check svg,
