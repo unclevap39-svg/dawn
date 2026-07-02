@@ -26,7 +26,7 @@
         "usp": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<ul class=\"relax-usp\">\n  <li>Détend la nuque en 15 minutes par jour</li>\n  <li>Impulsions EMS + chaleur douce réglables</li>\n  <li>Léger, sans fil, se glisse dans un sac</li>\n  <li>Garantie 30 jours satisfait ou remboursé</li>\n</ul>"
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<ul class=\"relax-usp\">\n  <li><strong>Détente ressentie dès les premières séances</strong></li>\n  <li>6 modes de massage, 16 niveaux d'intensité</li>\n  <li>Chaleur douce enveloppante au niveau des cervicales</li>\n  <li>15 minutes par jour, arrêt automatique</li>\n  <li>Garantie 30 jours satisfait ou remboursé</li>\n</ul>"
           }
         },
         "inventory": {
@@ -100,6 +100,12 @@
             "content": "<p>Utilisez le masseur sur une peau propre et sèche, en commençant par l'intensité la plus basse. Une séance de 15 minutes par jour suffit. Déconseillé aux porteurs de stimulateur cardiaque, aux femmes enceintes et en cas de problème de peau au niveau du cou. Appareil de bien-être : ne remplace pas un avis médical.</p>",
             "page": ""
           }
+        },
+        "payments": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<div class=\"relax-payments\">\n  <span class=\"relax-payments__label\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'lock' %}</span> Paiement 100 % sécurisé — cryptage SSL</span>\n  <div class=\"relax-payments__icons\">\n    {%- assign relax_payment_types = 'visa,master,cartes_bancaires,american_express,paypal,apple_pay,google_pay' | split: ',' -%}\n    {%- for type in relax_payment_types -%}\n      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}\n    {%- endfor -%}\n  </div>\n</div>"
+          }
         }
       },
       "block_order": [
@@ -111,6 +117,7 @@
         "inventory",
         "variant_picker",
         "buy_buttons",
+        "payments",
         "reassurance",
         "description",
         "tab-caracteristiques",
@@ -298,11 +305,151 @@
       "settings": {
         "button_label": "Ajouter au panier"
       }
+    },
+    "demo": {
+      "type": "image-with-text",
+      "blocks": {
+        "demo-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Voyez-le en action",
+            "heading_size": "h1"
+          }
+        },
+        "demo-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Placez-le autour du cou, choisissez votre mode, et laissez les impulsions EMS et la chaleur douce relâcher votre nuque. Le masseur épouse vos cervicales, tient tout seul, et la séance s'arrête automatiquement au bout de 15 minutes.</p>",
+            "text_style": "body"
+          }
+        },
+        "demo-caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "En démonstration",
+            "text_style": "caption_with_letter_spacing",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "demo-caption",
+        "demo-heading",
+        "demo-text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/relaxialis-demo.gif",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "benefices": {
+      "type": "relax-benefits",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pulse",
+            "heading": "Tensions du quotidien",
+            "text": "Relâche la nuque raidie par les heures d'écran, la voiture et le stress."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lotus",
+            "heading": "Posture et bien-être",
+            "text": "Une nuque détendue, ce sont des épaules qui redescendent et une tête plus légère."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "heading": "Une pause de 15 minutes",
+            "text": "Le programme s'arrête tout seul : zéro contrainte, même les soirs pressés."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "feather",
+            "heading": "Partout avec vous",
+            "text": "Canapé, bureau, train : léger et sans fil, il se fait oublier."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi vous allez l'adorer",
+        "heading": "Conçu pour votre quotidien",
+        "heading_size": "h1",
+        "subheading": "",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "chiffres": {
+      "type": "relax-stats",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "15 min",
+            "label": "par séance, arrêt automatique"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "6 modes",
+            "label": "et 16 niveaux d'intensité"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "30 jours",
+            "label": "satisfait ou remboursé"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "footnote": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "main",
+    "demo",
+    "benefices",
     "etapes",
+    "chiffres",
     "temoignages",
     "faq",
     "garantie",
