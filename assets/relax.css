@@ -1,6 +1,11 @@
 /* Relaxialis — styles des sections de conversion personnalisées */
 
 /* ---------- Utilitaires communs ---------- */
+
+/* Sécurité mobile : la page ne défile jamais latéralement */
+body {
+  overflow-x: hidden;
+}
 .relax-eyebrow {
   display: inline-block;
   font-size: 1.2rem;
@@ -184,6 +189,13 @@
 .relax-stats__label {
   font-size: 1.5rem;
   color: rgba(var(--color-foreground), 0.75);
+}
+
+@media screen and (max-width: 749px) {
+  /* Le 3e chiffre orphelin occupe toute la largeur au lieu d'une demi-colonne */
+  .relax-stats__grid > .relax-stats__item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 .relax-stats__footnote {
@@ -448,6 +460,40 @@
   width: 2rem;
   height: 2rem;
   vertical-align: middle;
+}
+
+/* Mobile : le tableau tient entièrement dans l'écran, aucun défilement latéral */
+@media screen and (max-width: 749px) {
+  .relax-compare table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .relax-compare th:first-child,
+  .relax-compare td:first-child {
+    width: 34%;
+  }
+
+  .relax-compare th,
+  .relax-compare td {
+    padding: 1rem 0.4rem;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .relax-compare thead th {
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+
+  .relax-compare__check svg,
+  .relax-compare__cross svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }
 
 /* ---------- Bandeau garantie ---------- */
