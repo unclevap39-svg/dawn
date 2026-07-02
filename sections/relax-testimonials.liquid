@@ -1,0 +1,194 @@
+{{ 'relax.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="relax-center">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="relax-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="relax-section-title {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="relax-section-subtitle">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="relax-testimonials__grid">
+      {%- for block in section.blocks -%}
+        <div class="relax-testimonial" {{ block.shopify_attributes }}>
+          <div class="relax-testimonial__stars" role="img" aria-label="{{ block.settings.rating }} étoiles sur 5">
+            {% render 'relax-stars', rating: block.settings.rating %}
+          </div>
+          {%- if block.settings.quote != blank -%}
+            <blockquote class="relax-testimonial__quote">{{ block.settings.quote }}</blockquote>
+          {%- endif -%}
+          <div class="relax-testimonial__footer">
+            {%- if block.settings.avatar != blank -%}
+              <div class="relax-testimonial__avatar">
+                {{ block.settings.avatar | image_url: width: 120 | image_tag: loading: 'lazy' }}
+              </div>
+            {%- endif -%}
+            <div>
+              {%- if block.settings.author != blank -%}
+                <div class="relax-testimonial__author">{{ block.settings.author }}</div>
+              {%- endif -%}
+              {%- if block.settings.meta != blank -%}
+                <div class="relax-testimonial__meta">{{ block.settings.meta }}</div>
+              {%- endif -%}
+              {%- if block.settings.verified -%}
+                <span class="relax-testimonial__verified">
+                  {% render 'relax-icon', icon: 'check' %}
+                  Achat vérifié
+                </span>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Témoignages clients",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Utilisez uniquement de vrais avis clients : les avis fictifs sont interdits par Meta et par la loi."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Ils l'ont adopté"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Ce que disent nos clients"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "options": [
+        { "value": "h2", "label": "Moyen" },
+        { "value": "h1", "label": "Grand" },
+        { "value": "h0", "label": "Très grand" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": ""
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Palette de couleurs",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "Marges internes"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge supérieure",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge inférieure",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Témoignage",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Note (étoiles)",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Avis",
+          "default": "Ajoutez ici un avis client authentique."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Prénom",
+          "default": "Prénom N."
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Précision (âge, situation…)",
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Afficher le badge « Achat vérifié »",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Photo (optionnelle)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Témoignages clients",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

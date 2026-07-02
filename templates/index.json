@@ -1,210 +1,478 @@
 {
   "sections": {
-    "image_banner": {
+    "hero": {
       "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Libérez votre nuque des tensions du quotidien",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Le masseur cervical Relaxialis combine impulsions EMS et chaleur douce pour détendre votre nuque en 15 minutes, où que vous soyez.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Découvrir Relaxialis",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["heading", "text", "button"],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 30,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "benefits": {
+      "type": "relax-benefits",
       "blocks": {
-        "heading": {
+        "benefit-1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pulse",
+            "heading": "Massage par impulsions EMS",
+            "text": "Des micro-impulsions ciblent les muscles de la nuque pour les aider à se relâcher en profondeur."
+          }
+        },
+        "benefit-2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heat",
+            "heading": "Chaleur apaisante",
+            "text": "Une douce chaleur constante enveloppe vos cervicales pour un effet cocon immédiat."
+          }
+        },
+        "benefit-3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "heading": "15 minutes par jour",
+            "text": "Une séance courte suffit : chez vous, au bureau ou en déplacement."
+          }
+        },
+        "benefit-4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "sliders",
+            "heading": "Modes et intensités réglables",
+            "text": "Plusieurs programmes et niveaux d'intensité pour un massage vraiment sur mesure."
+          }
+        },
+        "benefit-5": {
+          "type": "benefit",
+          "settings": {
+            "icon": "feather",
+            "heading": "Léger et sans fil",
+            "text": "Si discret et confortable que vous oublierez que vous le portez."
+          }
+        },
+        "benefit-6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "battery",
+            "heading": "Grande autonomie",
+            "text": "Se recharge en USB et vous accompagne pendant des semaines d'utilisation."
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5", "benefit-6"],
+      "settings": {
+        "eyebrow": "Pourquoi Relaxialis",
+        "heading": "Votre rituel détente, où que vous soyez",
+        "heading_size": "h1",
+        "subheading": "Un concentré de technologie pensé pour détendre votre nuque au quotidien.",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "probleme-solution": {
+      "type": "image-with-text",
+      "blocks": {
+        "iwt-heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Écrans, stress, mauvaises postures : votre nuque encaisse tout",
             "heading_size": "h1"
           }
         },
+        "iwt-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Des heures penché sur un téléphone ou un ordinateur, et la nuque se raidit, les épaules remontent, la fatigue s'installe. Relaxialis a été conçu pour intégrer une vraie pause détente dans votre journée : placez-le autour du cou, choisissez votre programme, et laissez les impulsions et la chaleur faire le travail.</p>",
+            "text_style": "body"
+          }
+        },
+        "iwt-button": {
+          "type": "button",
+          "settings": {
+            "button_label": "J'essaie pendant 30 jours",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["iwt-heading", "iwt-text", "iwt-button"],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "etapes": {
+      "type": "relax-steps",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "heading": "Placez-le autour du cou",
+            "text": "Le masseur épouse la forme de vos cervicales et tient tout seul, même en mouvement."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "heading": "Choisissez votre programme",
+            "text": "Sélectionnez le mode et l'intensité qui vous conviennent, avec ou sans chaleur."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "heading": "Profitez de la détente",
+            "text": "15 minutes plus tard, les tensions accumulées dans la journée se sont relâchées."
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3"],
+      "settings": {
+        "eyebrow": "Simple comme bonjour",
+        "heading": "Comment ça marche ?",
+        "heading_size": "h1",
+        "subheading": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "chiffres": {
+      "type": "relax-stats",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "15 min",
+            "label": "par séance, c'est tout ce qu'il faut"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "6 modes",
+            "label": "de massage pour varier les plaisirs"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "30 jours",
+            "label": "pour l'essayer, satisfait ou remboursé"
+          }
+        }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "footnote": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "produit": {
+      "type": "featured-product",
+      "blocks": {
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "Masseur cervical EMS + chaleur",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title"
+        },
+        "price": {
+          "type": "price"
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+      "block_order": ["text", "title", "price", "variant_picker", "buy_buttons"],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "product": "",
+        "color_scheme": "scheme-4",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "temoignages": {
+      "type": "relax-testimonials",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "avis-1": {
+          "type": "testimonial",
           "settings": {
-            "collection": ""
+            "rating": 5,
+            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
+            "author": "Prénom N.",
+            "meta": "",
+            "verified": true
           }
         },
-        "product": {
-          "type": "product",
+        "avis-2": {
+          "type": "testimonial",
           "settings": {
-            "product": "",
-            "second_image": false
+            "rating": 5,
+            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
+            "author": "Prénom N.",
+            "meta": "",
+            "verified": true
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "avis-3": {
+          "type": "testimonial",
           "settings": {
-            "collection": ""
+            "rating": 4,
+            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
+            "author": "Prénom N.",
+            "meta": "",
+            "verified": true
           }
         }
       },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
+      "block_order": ["avis-1", "avis-2", "avis-3"],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "eyebrow": "Ils l'ont adopté",
+        "heading": "Ce que disent nos clients",
         "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "subheading": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "comparatif": {
+      "type": "relax-comparison",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "row-1": {
+          "type": "row",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "label": "Massage EMS + chaleur",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
           }
         },
-        "column2": {
-          "type": "column",
+        "row-2": {
+          "type": "row",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "label": "Utilisable partout, sans fil",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
           }
         },
-        "column3": {
-          "type": "column",
+        "row-3": {
+          "type": "row",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "label": "15 minutes suffisent",
+            "col1_value": "oui",
+            "col2_value": "texte",
+            "col2_text": "Variable",
+            "col3_value": "texte",
+            "col3_text": "1 h avec le trajet"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "label": "Coût",
+            "col1_value": "texte",
+            "col1_text": "Un seul achat",
+            "col2_value": "texte",
+            "col2_text": "Un seul achat",
+            "col3_value": "texte",
+            "col3_text": "50 € et plus par séance"
+          }
+        },
+        "row-5": {
+          "type": "row",
+          "settings": {
+            "label": "Garantie satisfait ou remboursé 30 jours",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
           }
         }
       },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+      "block_order": ["row-1", "row-2", "row-3", "row-4", "row-5"],
       "settings": {
-        "title": "",
+        "eyebrow": "Faites le bon choix",
+        "heading": "Relaxialis face aux alternatives",
         "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
+        "subheading": "",
+        "col1_label": "Relaxialis",
+        "col2_label": "Coussin massant classique",
+        "col3_label": "Massage en institut",
         "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Que ressent-on pendant la séance ?",
+            "icon": "question_mark",
+            "row_content": "<p>Un léger picotement au niveau de la nuque, accompagné d'une sensation de chaleur agréable. L'intensité se règle finement : commencez au niveau le plus bas et augmentez progressivement jusqu'à trouver le réglage qui vous convient.</p>",
+            "page": ""
+          }
+        },
+        "faq-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Combien de temps dure une séance ?",
+            "icon": "question_mark",
+            "row_content": "<p>Une séance dure environ 15 minutes. Nous recommandons une séance par jour, par exemple le soir en rentrant du travail ou pendant une pause.</p>",
+            "page": ""
+          }
+        },
+        "faq-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Y a-t-il des contre-indications ?",
+            "icon": "question_mark",
+            "row_content": "<p>Le masseur est déconseillé aux personnes portant un stimulateur cardiaque ou tout autre implant électronique, aux femmes enceintes et aux personnes souffrant de problèmes cardiaques ou dermatologiques au niveau du cou. En cas de doute ou de douleur persistante, demandez conseil à un professionnel de santé. Relaxialis est un appareil de bien-être et ne remplace pas un avis médical.</p>",
+            "page": ""
+          }
+        },
+        "faq-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment se recharge-t-il ?",
+            "icon": "question_mark",
+            "row_content": "<p>Par câble USB (fourni). Une charge complète offre plusieurs semaines d'utilisation à raison d'une séance par jour.</p>",
+            "page": ""
+          }
+        },
+        "faq-5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les délais de livraison ?",
+            "icon": "question_mark",
+            "row_content": "<p>Votre commande est préparée sous 24 à 48 h, puis livrée avec un numéro de suivi. Vous recevez un e-mail de confirmation à chaque étape.</p>",
+            "page": ""
+          }
+        },
+        "faq-6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Et si le produit ne me convient pas ?",
+            "icon": "question_mark",
+            "row_content": "<p>Vous disposez de 30 jours après réception pour changer d'avis. Contactez-nous, renvoyez le produit et nous vous remboursons intégralement.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6"],
+      "settings": {
+        "caption": "Questions fréquentes",
+        "heading": "Tout ce que vous voulez savoir",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "garantie": {
+      "type": "relax-guarantee",
+      "settings": {
+        "icon": "shield",
+        "heading": "30 jours pour l'essayer, zéro risque",
+        "heading_size": "h1",
+        "text": "<p>Testez votre masseur Relaxialis tranquillement chez vous pendant 30 jours. S'il ne vous convient pas, renvoyez-le : nous vous remboursons intégralement, sans discuter.</p>",
+        "button_label": "J'essaie sans risque",
+        "button_link": "shopify://collections/all",
+        "color_scheme": "scheme-3",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero",
+    "benefits",
+    "probleme-solution",
+    "etapes",
+    "chiffres",
+    "produit",
+    "temoignages",
+    "comparatif",
+    "faq",
+    "garantie"
   ]
 }

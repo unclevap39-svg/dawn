@@ -1,0 +1,510 @@
+/* Relaxialis — styles des sections de conversion personnalisées */
+
+/* ---------- Utilitaires communs ---------- */
+.relax-eyebrow {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.65);
+  margin-bottom: 1rem;
+}
+
+.relax-section-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.relax-section-subtitle {
+  max-width: 62rem;
+  margin: 0 auto 3rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.relax-center {
+  text-align: center;
+}
+
+.relax-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+}
+
+.relax-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+/* ---------- Bénéfices (grille d'icônes) ---------- */
+.relax-benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .relax-benefits__grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .relax-benefits__grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .relax-benefits__grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media screen and (max-width: 749px) {
+  .relax-benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+.relax-benefits__card {
+  background: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-radius: 1.2rem;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.relax-benefits__card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.8rem 2.4rem rgba(var(--color-shadow), 0.08);
+}
+
+.relax-benefits__card .relax-icon {
+  margin: 0 auto 1.4rem;
+  width: 4rem;
+  height: 4rem;
+  color: rgb(var(--color-button));
+}
+
+.relax-benefits__card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.6rem;
+}
+
+.relax-benefits__card p {
+  margin: 0;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
+  line-height: 1.5;
+}
+
+/* ---------- Étapes (comment ça marche) ---------- */
+.relax-steps__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  counter-reset: relax-step;
+}
+
+@media screen and (min-width: 750px) {
+  .relax-steps__grid {
+    grid-template-columns: repeat(var(--relax-steps-count, 3), 1fr);
+  }
+}
+
+.relax-steps__item {
+  position: relative;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.relax-steps__number {
+  counter-increment: relax-step;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  margin: 0 auto 1.6rem;
+  border-radius: 50%;
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.relax-steps__number::before {
+  content: counter(relax-step);
+}
+
+.relax-steps__item h3 {
+  margin: 0 0 0.8rem;
+}
+
+.relax-steps__item p {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.relax-steps__image {
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+}
+
+.relax-steps__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Chiffres clés ---------- */
+.relax-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .relax-stats__grid {
+    grid-template-columns: repeat(var(--relax-stats-count, 3), 1fr);
+  }
+}
+
+.relax-stats__item {
+  text-align: center;
+}
+
+.relax-stats__value {
+  display: block;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.relax-stats__label {
+  font-size: 1.5rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.relax-stats__footnote {
+  margin-top: 2.4rem;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.55);
+  text-align: center;
+}
+
+/* ---------- Témoignages ---------- */
+.relax-testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .relax-testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.relax-testimonial {
+  display: flex;
+  flex-direction: column;
+  background: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+}
+
+.relax-testimonial__stars {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 1.2rem;
+  color: #F5A623;
+}
+
+.relax-testimonial__stars svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.relax-testimonial__quote {
+  margin: 0 0 1.6rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.relax-testimonial__footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.relax-testimonial__avatar {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.relax-testimonial__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relax-testimonial__author {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.relax-testimonial__meta {
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.relax-testimonial__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2E7D32;
+}
+
+.relax-testimonial__verified svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* ---------- Tableau comparatif ---------- */
+.relax-compare {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.relax-compare table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 60rem;
+}
+
+.relax-compare th,
+.relax-compare td {
+  padding: 1.4rem 1.6rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.relax-compare th:first-child,
+.relax-compare td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.relax-compare thead th {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.relax-compare .relax-compare__hero {
+  background: rgba(var(--color-button), 0.08);
+  border-left: 0.1rem solid rgba(var(--color-button), 0.25);
+  border-right: 0.1rem solid rgba(var(--color-button), 0.25);
+}
+
+.relax-compare thead .relax-compare__hero {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  border-radius: 1rem 1rem 0 0;
+}
+
+.relax-compare tbody tr:last-child .relax-compare__hero {
+  border-bottom: 0.1rem solid rgba(var(--color-button), 0.25);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.relax-compare__check {
+  color: #2E7D32;
+}
+
+.relax-compare__cross {
+  color: #C62828;
+}
+
+.relax-compare__check svg,
+.relax-compare__cross svg {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+}
+
+/* ---------- Bandeau garantie ---------- */
+.relax-guarantee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.6rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.relax-guarantee .relax-icon {
+  width: 6rem;
+  height: 6rem;
+}
+
+.relax-guarantee h2 {
+  margin: 0;
+}
+
+.relax-guarantee__text {
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* ---------- Liste d'arguments produit (USP) ---------- */
+.relax-usp {
+  list-style: none;
+  margin: 1.2rem 0;
+  padding: 0;
+}
+
+.relax-usp li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.relax-usp li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: 0.2rem;
+  border-radius: 50%;
+  background-color: rgb(var(--color-button));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='11' fill='white' stroke='none'/%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' stroke='black'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='11' fill='white' stroke='none'/%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' stroke='black'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---------- Barre d'achat collante ---------- */
+.relax-sticky-atc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgb(var(--color-background));
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  box-shadow: 0 -0.4rem 1.6rem rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.5rem;
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+
+.relax-sticky-atc.is-visible {
+  transform: translateY(0);
+}
+
+.relax-sticky-atc__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+.relax-sticky-atc__image {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.relax-sticky-atc__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relax-sticky-atc__info {
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.relax-sticky-atc__title {
+  display: block;
+  font-weight: 600;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relax-sticky-atc__price {
+  font-size: 1.4rem;
+}
+
+.relax-sticky-atc__price .relax-sticky-atc__compare {
+  text-decoration: line-through;
+  color: rgba(var(--color-foreground), 0.55);
+  margin-right: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.relax-sticky-atc__form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.relax-sticky-atc__select {
+  height: 4.4rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  max-width: 16rem;
+}
+
+.relax-sticky-atc__button {
+  min-width: 16rem;
+}
+
+@media screen and (max-width: 749px) {
+  .relax-sticky-atc__image,
+  .relax-sticky-atc__info {
+    display: none;
+  }
+
+  .relax-sticky-atc__form {
+    width: 100%;
+  }
+
+  .relax-sticky-atc__select {
+    flex-grow: 1;
+    max-width: none;
+  }
+
+  .relax-sticky-atc__button {
+    flex-grow: 1;
+  }
+}
+
+/* Évite que la barre collante masque le bas de page sur mobile */
+body.relax-sticky-atc-active {
+  scroll-padding-bottom: 8rem;
+}

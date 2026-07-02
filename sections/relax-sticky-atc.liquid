@@ -1,0 +1,80 @@
+{{ 'relax.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'relax-sticky-atc.js' | asset_url }}" defer="defer"></script>
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<div class="relax-sticky-atc color-scheme-1 gradient" aria-hidden="false">
+  <div class="relax-sticky-atc__inner">
+    {%- if product.featured_media -%}
+      <div class="relax-sticky-atc__image">
+        {{ product.featured_media | image_url: width: 96 | image_tag: loading: 'lazy', alt: product.title }}
+      </div>
+    {%- endif -%}
+    <div class="relax-sticky-atc__info">
+      <span class="relax-sticky-atc__title">{{ product.title }}</span>
+      <span class="relax-sticky-atc__price">
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <span class="relax-sticky-atc__compare">{{ current_variant.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span data-sticky-price>{{ current_variant.price | money }}</span>
+      </span>
+    </div>
+    {%- form 'product', product, class: 'relax-sticky-atc__form' -%}
+      {%- if product.variants.size > 1 -%}
+        <select name="id" class="relax-sticky-atc__select" aria-label="Choisir une variante">
+          {%- for variant in product.variants -%}
+            <option
+              value="{{ variant.id }}"
+              data-price="{{ variant.price | money }}"
+              {% if variant == current_variant %}selected{% endif %}
+              {% unless variant.available %}disabled{% endunless %}
+            >
+              {{ variant.title }}{% unless variant.available %} — épuisé{% endunless %}
+            </option>
+          {%- endfor -%}
+        </select>
+      {%- else -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}">
+      {%- endif -%}
+      <button
+        type="submit"
+        class="button relax-sticky-atc__button"
+        {% if current_variant.available == false %}disabled{% endif %}
+      >
+        {%- if current_variant.available -%}
+          {{ section.settings.button_label }}
+        {%- else -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- endif -%}
+      </button>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Barre d'achat collante",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Affiche une barre d'ajout au panier fixée en bas de l'écran dès que le bouton d'achat principal n'est plus visible."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texte du bouton",
+      "default": "Ajouter au panier"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Barre d'achat collante"
+    }
+  ]
+}
+{% endschema %}

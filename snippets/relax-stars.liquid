@@ -1,0 +1,11 @@
+{% comment %}
+  Affiche une rangée d'étoiles.
+  Utilisation : {% render 'relax-stars', rating: 5 %}
+{% endcomment %}
+
+{%- assign stars = rating | default: 5 | times: 1 -%}
+{%- for i in (1..5) -%}
+  {%- if i <= stars -%}
+    {% render 'relax-icon', icon: 'star' %}
+  {%- endif -%}
+{%- endfor -%}

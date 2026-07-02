@@ -1,0 +1,180 @@
+{{ 'relax.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="relax-center">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="relax-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="relax-section-title {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="relax-section-subtitle">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <ul class="relax-benefits__grid relax-benefits__grid--{{ section.settings.columns_desktop }}" role="list">
+      {%- for block in section.blocks -%}
+        <li class="relax-benefits__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != 'none' -%}
+            <span class="relax-icon">{% render 'relax-icon', icon: block.settings.icon %}</span>
+          {%- endif -%}
+          {%- if block.settings.heading != blank -%}
+            <h3>{{ block.settings.heading }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p>{{ block.settings.text }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bénéfices (icônes)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "Pourquoi Relaxialis"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Votre rituel détente, où que vous soyez"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "options": [
+        { "value": "h2", "label": "Moyen" },
+        { "value": "h1", "label": "Grand" },
+        { "value": "h0", "label": "Très grand" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Un concentré de technologie pensé pour détendre votre nuque au quotidien."
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Colonnes sur ordinateur",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Palette de couleurs",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "Marges internes"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge supérieure",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge inférieure",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Bénéfice",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "none", "label": "Aucune" },
+            { "value": "pulse", "label": "Impulsions (EMS)" },
+            { "value": "heat", "label": "Chaleur" },
+            { "value": "battery", "label": "Batterie" },
+            { "value": "feather", "label": "Légèreté" },
+            { "value": "clock", "label": "Horloge" },
+            { "value": "shield", "label": "Bouclier (garantie)" },
+            { "value": "truck", "label": "Livraison" },
+            { "value": "lock", "label": "Cadenas (sécurité)" },
+            { "value": "heart", "label": "Cœur" },
+            { "value": "lotus", "label": "Lotus (bien-être)" },
+            { "value": "sliders", "label": "Réglages (modes)" },
+            { "value": "chat", "label": "Support client" },
+            { "value": "return", "label": "Retours" }
+          ],
+          "default": "pulse"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titre",
+          "default": "Titre du bénéfice"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Décrivez ce bénéfice en une phrase courte et concrète."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bénéfices (icônes)",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "pulse", "heading": "Massage par impulsions", "text": "La technologie EMS cible les muscles de la nuque pour les aider à se relâcher." } },
+        { "type": "benefit", "settings": { "icon": "heat", "heading": "Chaleur apaisante", "text": "Une douce chaleur constante enveloppe les cervicales pour un effet cocon." } },
+        { "type": "benefit", "settings": { "icon": "clock", "heading": "15 minutes par jour", "text": "Une séance courte, chez vous, au bureau ou en déplacement." } },
+        { "type": "benefit", "settings": { "icon": "sliders", "heading": "Modes et intensités", "text": "Plusieurs programmes et niveaux d'intensité pour un massage sur mesure." } },
+        { "type": "benefit", "settings": { "icon": "feather", "heading": "Léger et sans fil", "text": "Si discret que vous oublierez que vous le portez." } },
+        { "type": "benefit", "settings": { "icon": "battery", "heading": "Grande autonomie", "text": "Se recharge en USB et vous accompagne pendant des semaines." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
