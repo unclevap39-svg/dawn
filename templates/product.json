@@ -201,7 +201,8 @@
             "author": "Thomas R.",
             "meta": "Nantes",
             "date": "Il y a 3 semaines",
-            "verified": true
+            "verified": true,
+            "photo": "shopify://shop_images/avis-client-1.png"
           }
         },
         "avis-3": {
@@ -213,7 +214,8 @@
             "author": "Nadia B.",
             "meta": "Marseille",
             "date": "Il y a 1 mois",
-            "verified": true
+            "verified": true,
+            "photo": "shopify://shop_images/avis-client-2.png"
           }
         },
         "avis-4": {
@@ -225,7 +227,8 @@
             "author": "Sophie L.",
             "meta": "Toulouse",
             "date": "Il y a 1 mois",
-            "verified": true
+            "verified": true,
+            "photo": "shopify://shop_images/avis-client-5.png"
           }
         },
         "avis-5": {
@@ -249,7 +252,8 @@
             "author": "Julien P.",
             "meta": "Bordeaux",
             "date": "Il y a 2 mois",
-            "verified": true
+            "verified": true,
+            "photo": "shopify://shop_images/avis-client-4.png"
           }
         },
         "avis-7": {
@@ -261,7 +265,8 @@
             "author": "Isabelle V.",
             "meta": "Rennes",
             "date": "Il y a 2 mois",
-            "verified": true
+            "verified": true,
+            "photo": "shopify://shop_images/avis-client-3.png"
           }
         },
         "avis-8": {
