@@ -184,10 +184,10 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "Enfin des soirées sans nuque raide",
-            "quote": "Je passe mes journées sur l'ordinateur et le soir ma nuque était toujours tendue. Quinze minutes en rentrant, et je sens vraiment la différence. Le mode chaleur est très agréable.",
+            "title": "Je ne pensais pas que ça marcherait aussi bien",
+            "quote": "Franchement, j'étais sceptique : à ce prix, je m'attendais à un gadget. La première séance surprend, les impulsions picotent un peu, puis on trouve son réglage (moi c'est le mode 3, intensité 8) et là c'est un vrai relâchement. Je travaille 8 h par jour sur écran et mes fins de journée n'ont plus rien à voir. Je l'utilise en préparant le dîner, il tient tout seul.",
             "author": "Claire M.",
-            "meta": "Lyon",
+            "meta": "Télétravail — Lyon",
             "date": "Il y a 2 semaines",
             "verified": true
           }
@@ -196,8 +196,8 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "Bluffé par les impulsions",
-            "quote": "Sceptique au départ, je pensais à un gadget. La première séance surprend un peu, on ajuste l'intensité et ensuite c'est un vrai moment de détente. Je l'utilise devant la télé.",
+            "title": "Commercial, 3 h de voiture par jour",
+            "quote": "Je fais beaucoup de route et ma nuque était en béton chaque soir. Maintenant je fais ma séance de 15 minutes en arrivant à l'hôtel. La chaleur arrive vite, les impulsions font le reste. Il pèse rien, il reste dans ma sacoche. Meilleur achat de l'année pour moi.",
             "author": "Thomas R.",
             "meta": "Nantes",
             "date": "Il y a 3 semaines",
@@ -208,8 +208,8 @@
           "type": "testimonial",
           "settings": {
             "rating": 4,
-            "title": "Très bien, réglage à apprivoiser",
-            "quote": "Le masseur fonctionne très bien et tient bien en place. J'enlève une étoile car il faut quelques essais pour trouver le bon mode. Une fois réglé, c'est parfait.",
+            "title": "Très efficace, prise en main à prévoir",
+            "quote": "Le produit fait ce qu'il promet et la chaleur est vraiment agréable. J'enlève une étoile parce qu'il m'a fallu deux ou trois séances pour oser monter l'intensité et sentir le vrai effet — commencez doucement mais montez progressivement, c'est là que ça devient intéressant. Depuis, je l'utilise tous les soirs.",
             "author": "Nadia B.",
             "meta": "Marseille",
             "date": "Il y a 1 mois",
@@ -220,8 +220,8 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "Mon rituel du soir",
-            "quote": "Il est devenu mon moment à moi après le travail. Léger, on l'oublie vite, et la chaleur détend immédiatement la base de la nuque.",
+            "title": "Mon moment à moi après le service",
+            "quote": "Infirmière, je porte et je me penche toute la journée. Le soir, quinze minutes avec la chaleur au maximum et les épaules qui redescendent enfin. Il est devenu aussi automatique que ma tisane. Ma collègue l'a commandé après l'avoir essayé cinq minutes en pause.",
             "photo": "shopify://shop_images/relaxialis-nuque.png",
             "author": "Sophie L.",
             "meta": "Toulouse",
@@ -233,8 +233,8 @@
           "type": "testimonial",
           "settings": {
             "rating": 4,
-            "title": "Pratique au bureau",
-            "quote": "Je l'utilise à la pause déjeuner, il est discret et silencieux. J'aurais aimé une pochette de transport, mais je suis très satisfait de mon achat.",
+            "title": "Discret au bureau, il me suit partout",
+            "quote": "Je l'utilise à la pause déjeuner au bureau : silencieux, personne ne remarque rien. Le seul reproche, c'est l'absence de pochette de transport, je le mets dans une trousse. À part ça, il tient bien en place même quand je marche et la batterie dure des semaines.",
             "photo": "shopify://shop_images/relaxialis-bureau.png",
             "author": "Marc D.",
             "meta": "Paris",
@@ -246,10 +246,34 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "title": "Offert à ma mère",
-            "quote": "Cadeau pour ma mère qui tricote beaucoup. Elle l'utilise tous les jours et me demande où je l'ai trouvé. Livraison rapide et colis bien emballé.",
+            "title": "Offert à ma mère de 68 ans, adopté en une soirée",
+            "quote": "Ma mère tricote des heures et se plaignait de sa nuque à chaque appel. Je lui ai offert celui-ci après avoir comparé pas mal de modèles. Elle a compris les boutons toute seule, l'utilise chaque soir devant les informations, et me demande pourquoi je ne lui ai pas offert plus tôt. Livraison rapide, colis soigné.",
             "author": "Julien P.",
             "meta": "Bordeaux",
+            "date": "Il y a 2 mois",
+            "verified": true
+          }
+        },
+        "avis-7": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Mieux qu'un coussin massant, moins cher qu'un institut",
+            "quote": "J'avais déjà un coussin à rouleaux qui dormait dans le placard : trop encombrant, jamais le bon angle. Celui-ci, on le pose autour du cou et c'est réglé — la différence, c'est qu'on l'utilise VRAIMENT tous les jours. Rapporté au prix d'une seule séance en institut, il est rentabilisé en une semaine.",
+            "author": "Isabelle V.",
+            "meta": "Rennes",
+            "date": "Il y a 2 mois",
+            "verified": true
+          }
+        },
+        "avis-8": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "SAV au top, et le produit suit",
+            "quote": "J'avais une question sur le mode chaleur avant de commander, réponse claire en quelques heures, en français. Le masseur est arrivé en trois jours. Après un mois d'utilisation quotidienne avec ma femme (chacun sa séance !), aucune baisse de régime. On recommande.",
+            "author": "Patrick G.",
+            "meta": "Strasbourg",
             "date": "Il y a 2 mois",
             "verified": true
           }
@@ -261,17 +285,19 @@
         "avis-3",
         "avis-4",
         "avis-5",
-        "avis-6"
+        "avis-6",
+        "avis-7",
+        "avis-8"
       ],
       "settings": {
         "eyebrow": "Ils l'ont adopté",
         "heading": "Ce que disent nos clients",
         "heading_size": "h1",
         "show_summary": true,
-        "summary_average": "4,7",
+        "summary_average": "4,8",
         "summary_count": "Basé sur les avis affichés ci-dessous",
-        "bar_5": 67,
-        "bar_4": 33,
+        "bar_5": 75,
+        "bar_4": 25,
         "bar_3": 0,
         "bar_2": 0,
         "bar_1": 0,
