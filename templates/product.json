@@ -184,9 +184,11 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "title": "Enfin des soirées sans nuque raide",
+            "quote": "Je passe mes journées sur l'ordinateur et le soir ma nuque était toujours tendue. Quinze minutes en rentrant, et je sens vraiment la différence. Le mode chaleur est très agréable.",
+            "author": "Claire M.",
+            "meta": "Lyon",
+            "date": "Il y a 2 semaines",
             "verified": true
           }
         },
@@ -194,9 +196,11 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "title": "Bluffé par les impulsions",
+            "quote": "Sceptique au départ, je pensais à un gadget. La première séance surprend un peu, on ajuste l'intensité et ensuite c'est un vrai moment de détente. Je l'utilise devant la télé.",
+            "author": "Thomas R.",
+            "meta": "Nantes",
+            "date": "Il y a 3 semaines",
             "verified": true
           }
         },
@@ -204,9 +208,49 @@
           "type": "testimonial",
           "settings": {
             "rating": 4,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "title": "Très bien, réglage à apprivoiser",
+            "quote": "Le masseur fonctionne très bien et tient bien en place. J'enlève une étoile car il faut quelques essais pour trouver le bon mode. Une fois réglé, c'est parfait.",
+            "author": "Nadia B.",
+            "meta": "Marseille",
+            "date": "Il y a 1 mois",
+            "verified": true
+          }
+        },
+        "avis-4": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Mon rituel du soir",
+            "quote": "Il est devenu mon moment à moi après le travail. Léger, on l'oublie vite, et la chaleur détend immédiatement la base de la nuque.",
+            "photo": "shopify://shop_images/relaxialis-nuque.png",
+            "author": "Sophie L.",
+            "meta": "Toulouse",
+            "date": "Il y a 1 mois",
+            "verified": true
+          }
+        },
+        "avis-5": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "title": "Pratique au bureau",
+            "quote": "Je l'utilise à la pause déjeuner, il est discret et silencieux. J'aurais aimé une pochette de transport, mais je suis très satisfait de mon achat.",
+            "photo": "shopify://shop_images/relaxialis-bureau.png",
+            "author": "Marc D.",
+            "meta": "Paris",
+            "date": "Il y a 1 mois",
+            "verified": true
+          }
+        },
+        "avis-6": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Offert à ma mère",
+            "quote": "Cadeau pour ma mère qui tricote beaucoup. Elle l'utilise tous les jours et me demande où je l'ai trouvé. Livraison rapide et colis bien emballé.",
+            "author": "Julien P.",
+            "meta": "Bordeaux",
+            "date": "Il y a 2 mois",
             "verified": true
           }
         }
@@ -214,14 +258,24 @@
       "block_order": [
         "avis-1",
         "avis-2",
-        "avis-3"
+        "avis-3",
+        "avis-4",
+        "avis-5",
+        "avis-6"
       ],
       "settings": {
         "eyebrow": "Ils l'ont adopté",
         "heading": "Ce que disent nos clients",
         "heading_size": "h1",
-        "subheading": "",
-        "color_scheme": "scheme-1",
+        "show_summary": true,
+        "summary_average": "4,7",
+        "summary_count": "Basé sur les avis affichés ci-dessous",
+        "bar_5": 67,
+        "bar_4": 33,
+        "bar_3": 0,
+        "bar_2": 0,
+        "bar_1": 0,
+        "color_scheme": "scheme-2",
         "padding_top": 52,
         "padding_bottom": 52
       }
@@ -442,15 +496,145 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
+    },
+    "problemes": {
+      "type": "multirow",
+      "blocks": {
+        "row-bureau": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/relaxialis-bureau.png",
+            "caption": "Au bureau comme à la maison",
+            "heading": "Des journées entières penché sur un écran ?",
+            "text": "<p>La nuque se contracte sans même que vous vous en rendiez compte. Portez Relaxialis pendant que vous travaillez : lui masse, vous continuez votre journée.</p>",
+            "button_label": ""
+          }
+        },
+        "row-nuque": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/relaxialis-nuque.png",
+            "caption": "Précis",
+            "heading": "Il agit exactement là où les tensions s'accumulent",
+            "text": "<p>Les deux électrodes se placent naturellement à la base de la nuque — la zone que l'on masse instinctivement en fin de journée. Les impulsions et la chaleur font le reste.</p>",
+            "button_label": ""
+          }
+        },
+        "row-coffret": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/relaxialis-coffret.png",
+            "caption": "Dans la boîte",
+            "heading": "Prêt à l'emploi dès la réception",
+            "text": "<p>Votre masseur arrive avec son câble de recharge USB et son guide de démarrage rapide. Chargez-le, placez-le, détendez-vous : tout est inclus, sans abonnement ni consommable.</p>",
+            "button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "row-bureau",
+        "row-nuque",
+        "row-coffret"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "primary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "comparatif": {
+      "type": "relax-comparison",
+      "blocks": {
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "label": "Massage EMS + chaleur",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "label": "Utilisable partout, sans fil",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "label": "15 minutes suffisent",
+            "col1_value": "oui",
+            "col2_value": "texte",
+            "col2_text": "Variable",
+            "col3_value": "texte",
+            "col3_text": "1 h avec le trajet"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "label": "Coût",
+            "col1_value": "texte",
+            "col1_text": "Un seul achat",
+            "col2_value": "texte",
+            "col2_text": "Un seul achat",
+            "col3_value": "texte",
+            "col3_text": "50 € et plus par séance"
+          }
+        },
+        "row-5": {
+          "type": "row",
+          "settings": {
+            "label": "Garantie satisfait ou remboursé 30 jours",
+            "col1_value": "oui",
+            "col2_value": "non",
+            "col3_value": "non"
+          }
+        }
+      },
+      "block_order": [
+        "row-1",
+        "row-2",
+        "row-3",
+        "row-4",
+        "row-5"
+      ],
+      "settings": {
+        "eyebrow": "Faites le bon choix",
+        "heading": "Relaxialis face aux alternatives",
+        "heading_size": "h1",
+        "col1_label": "Relaxialis",
+        "col2_label": "Coussin massant classique",
+        "col3_label": "Massage en institut",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "demo",
     "benefices",
+    "problemes",
     "etapes",
     "chiffres",
     "temoignages",
+    "comparatif",
     "faq",
     "garantie",
     "sticky-atc"

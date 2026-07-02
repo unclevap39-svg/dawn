@@ -28,12 +28,47 @@
       {%- endif -%}
     </div>
 
+    {%- if section.settings.show_summary -%}
+      <div class="relax-reviews-summary">
+        <div class="relax-reviews-summary__score">
+          <span class="relax-reviews-summary__average">{{ section.settings.summary_average }}<span class="relax-reviews-summary__outof">/5</span></span>
+          <div class="relax-testimonial__stars" role="img" aria-label="Note moyenne {{ section.settings.summary_average }} sur 5">
+            {% render 'relax-stars', rating: 5 %}
+          </div>
+          {%- if section.settings.summary_count != blank -%}
+            <span class="relax-reviews-summary__count">{{ section.settings.summary_count }}</span>
+          {%- endif -%}
+        </div>
+        <div class="relax-reviews-summary__bars">
+          {%- assign bar_values = section.settings.bar_5 | append: ',' | append: section.settings.bar_4 | append: ',' | append: section.settings.bar_3 | append: ',' | append: section.settings.bar_2 | append: ',' | append: section.settings.bar_1 | split: ',' -%}
+          {%- for value in bar_values -%}
+            {%- assign star_label = 5 | minus: forloop.index0 -%}
+            <div class="relax-reviews-summary__bar-row">
+              <span class="relax-reviews-summary__bar-label">{{ star_label }} ★</span>
+              <div class="relax-reviews-summary__bar-track">
+                <div class="relax-reviews-summary__bar-fill" style="width: {{ value }}%;"></div>
+              </div>
+              <span class="relax-reviews-summary__bar-value">{{ value }} %</span>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
     <div class="relax-testimonials__grid">
       {%- for block in section.blocks -%}
         <div class="relax-testimonial" {{ block.shopify_attributes }}>
+          {%- if block.settings.photo != blank -%}
+            <div class="relax-testimonial__photo">
+              {{ block.settings.photo | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 540, 720' }}
+            </div>
+          {%- endif -%}
           <div class="relax-testimonial__stars" role="img" aria-label="{{ block.settings.rating }} étoiles sur 5">
             {% render 'relax-stars', rating: block.settings.rating %}
           </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="relax-testimonial__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
           {%- if block.settings.quote != blank -%}
             <blockquote class="relax-testimonial__quote">{{ block.settings.quote }}</blockquote>
           {%- endif -%}
@@ -57,6 +92,9 @@
                 </span>
               {%- endif -%}
             </div>
+            {%- if block.settings.date != blank -%}
+              <span class="relax-testimonial__date">{{ block.settings.date }}</span>
+            {%- endif -%}
           </div>
         </div>
       {%- endfor -%}
@@ -72,7 +110,7 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "Utilisez uniquement de vrais avis clients : les avis fictifs sont interdits par Meta et par la loi."
+      "content": "⚠️ N'affichez que de vrais avis clients et des chiffres exacts : les avis fictifs sont interdits par la loi et par Meta."
     },
     {
       "type": "text",
@@ -101,6 +139,78 @@
       "type": "text",
       "id": "subheading",
       "label": "Sous-titre"
+    },
+    {
+      "type": "header",
+      "content": "Synthèse des avis"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "Afficher la synthèse (note moyenne + répartition)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "summary_average",
+      "label": "Note moyenne",
+      "default": "4,8"
+    },
+    {
+      "type": "text",
+      "id": "summary_count",
+      "label": "Nombre d'avis (ex. « Basé sur 11 avis »)",
+      "default": "Basé sur nos premiers avis clients"
+    },
+    {
+      "type": "range",
+      "id": "bar_5",
+      "label": "% d'avis 5 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "bar_4",
+      "label": "% d'avis 4 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "bar_3",
+      "label": "% d'avis 3 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "bar_2",
+      "label": "% d'avis 2 étoiles",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "bar_1",
+      "label": "% d'avis 1 étoile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 0
     },
     {
       "type": "color_scheme",
@@ -148,10 +258,20 @@
           "default": 5
         },
         {
+          "type": "text",
+          "id": "title",
+          "label": "Titre de l'avis"
+        },
+        {
           "type": "textarea",
           "id": "quote",
           "label": "Avis",
           "default": "Ajoutez ici un avis client authentique."
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo jointe à l'avis (optionnelle)"
         },
         {
           "type": "text",
@@ -162,7 +282,12 @@
         {
           "type": "text",
           "id": "meta",
-          "label": "Précision (âge, situation…)"
+          "label": "Précision (ville, âge…)"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date de l'avis"
         },
         {
           "type": "checkbox",
@@ -173,7 +298,7 @@
         {
           "type": "image_picker",
           "id": "avatar",
-          "label": "Photo (optionnelle)"
+          "label": "Photo de profil (optionnelle)"
         }
       ]
     }

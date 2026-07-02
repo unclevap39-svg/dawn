@@ -278,6 +278,112 @@
   height: 1.4rem;
 }
 
+/* ---------- Synthèse des avis ---------- */
+.relax-reviews-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 64rem;
+  margin: 0 auto 3.2rem;
+  padding: 2rem 2.4rem;
+  background: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-radius: 1.2rem;
+}
+
+.relax-reviews-summary__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.relax-reviews-summary__average {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.relax-reviews-summary__outof {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: rgba(var(--color-foreground), 0.55);
+}
+
+.relax-reviews-summary__count {
+  font-size: 1.3rem;
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+.relax-reviews-summary__bars {
+  flex-grow: 1;
+  min-width: 24rem;
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.relax-reviews-summary__bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.25rem;
+}
+
+.relax-reviews-summary__bar-label {
+  width: 3.4rem;
+  white-space: nowrap;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+.relax-reviews-summary__bar-track {
+  flex-grow: 1;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  background: rgba(var(--color-foreground), 0.08);
+  overflow: hidden;
+}
+
+.relax-reviews-summary__bar-fill {
+  height: 100%;
+  border-radius: 0.4rem;
+  background: #F5A623;
+}
+
+.relax-reviews-summary__bar-value {
+  width: 3.6rem;
+  text-align: right;
+  color: rgba(var(--color-foreground), 0.55);
+}
+
+.relax-testimonial__photo {
+  margin: -2.4rem -2.4rem 1.4rem;
+  border-radius: 1.2rem 1.2rem 0 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.relax-testimonial__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relax-testimonial__title {
+  margin: 0 0 0.6rem;
+  font-size: 1.5rem;
+}
+
+.relax-testimonial__date {
+  margin-left: auto;
+  align-self: flex-start;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.5);
+}
+
 /* ---------- Tableau comparatif ---------- */
 .relax-compare {
   overflow-x: auto;
