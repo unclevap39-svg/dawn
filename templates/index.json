@@ -292,9 +292,12 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "title": "Commercial, 3 h de voiture par jour",
+            "quote": "Je fais beaucoup de route et ma nuque était en béton chaque soir. Maintenant je fais ma séance de 15 minutes en arrivant à l'hôtel. La chaleur arrive vite, les impulsions font le reste. Meilleur achat de l'année pour moi.",
+            "photo": "shopify://shop_images/avis-client-1.png",
+            "author": "Thomas R.",
+            "meta": "Nantes",
+            "date": "Il y a 3 semaines",
             "verified": true
           }
         },
@@ -302,19 +305,25 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "title": "Mon moment à moi après le service",
+            "quote": "Infirmière, je porte et je me penche toute la journée. Le soir, quinze minutes avec la chaleur au maximum et les épaules qui redescendent enfin. Il est devenu aussi automatique que ma tisane.",
+            "photo": "shopify://shop_images/avis-client-5.png",
+            "author": "Sophie L.",
+            "meta": "Toulouse",
+            "date": "Il y a 1 mois",
             "verified": true
           }
         },
         "avis-3": {
           "type": "testimonial",
           "settings": {
-            "rating": 4,
-            "quote": "Remplacez ce texte par un avis client authentique dès vos premières ventes.",
-            "author": "Prénom N.",
-            "meta": "",
+            "rating": 5,
+            "title": "Offert à ma mère de 68 ans, adopté en une soirée",
+            "quote": "Ma mère tricote des heures et se plaignait de sa nuque à chaque appel. Elle a compris les boutons toute seule, l'utilise chaque soir devant les informations, et me demande pourquoi je ne lui ai pas offert plus tôt.",
+            "photo": "shopify://shop_images/avis-client-4.png",
+            "author": "Julien P.",
+            "meta": "Bordeaux",
+            "date": "Il y a 2 mois",
             "verified": true
           }
         }
@@ -328,7 +337,14 @@
         "eyebrow": "Ils l'ont adopté",
         "heading": "Ce que disent nos clients",
         "heading_size": "h1",
-        "subheading": "",
+        "show_summary": false,
+        "summary_average": "4,8",
+        "summary_count": "Basé sur les avis affichés",
+        "bar_5": 80,
+        "bar_4": 20,
+        "bar_3": 0,
+        "bar_2": 0,
+        "bar_1": 0,
         "color_scheme": "scheme-2",
         "padding_top": 52,
         "padding_bottom": 52
