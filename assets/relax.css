@@ -27,12 +27,14 @@
 }
 
 .relax-icon {
+  display: inline-flex;
   width: 3.2rem;
   height: 3.2rem;
   flex-shrink: 0;
 }
 
 .relax-icon svg {
+  display: block;
   width: 100%;
   height: 100%;
   stroke: currentColor;
