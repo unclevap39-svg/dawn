@@ -7,7 +7,7 @@
           "type": "heading",
           "settings": {
             "heading": "Libérez votre nuque des tensions du quotidien",
-            "heading_size": "h0"
+            "heading_size": "h1"
           }
         },
         "text": {
@@ -36,14 +36,14 @@
       ],
       "settings": {
         "image_overlay_opacity": 0,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "middle-left",
         "show_text_box": true,
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
-        "show_text_below": false,
+        "show_text_below": true,
         "image": "shopify://shop_images/relaxialis-hero.png"
       }
     },
@@ -258,16 +258,10 @@
         "price": {
           "type": "price"
         },
-        "variant_picker": {
-          "type": "variant_picker",
+        "cta": {
+          "type": "custom_liquid",
           "settings": {
-            "picker_type": "button"
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
+            "custom_liquid": "<a href=\"/products/masseur-cervical-relaxialis\" class=\"button\" style=\"margin-top: 1rem;\">Je découvre le masseur</a>"
           }
         }
       },
@@ -275,8 +269,7 @@
         "text",
         "title",
         "price",
-        "variant_picker",
-        "buy_buttons"
+        "cta"
       ],
       "settings": {
         "product": "masseur-cervical-relaxialis",
