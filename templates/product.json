@@ -55,7 +55,7 @@
           "settings": {
             "layout": "vertical",
             "icon_1": "truck",
-            "heading_1": "Expédition sous 24-48 h avec suivi",
+            "heading_1": "Livraison GRATUITE — 3 à 7 jours ouvrés",
             "icon_2": "return",
             "heading_2": "30 jours satisfait ou remboursé",
             "icon_3": "lock",
@@ -79,7 +79,7 @@
           "settings": {
             "heading": "Livraison & retours",
             "icon": "truck",
-            "content": "<p>Commande préparée sous 24 à 48 h, livrée avec numéro de suivi. Retours acceptés pendant 30 jours après réception : contactez-nous et nous vous guidons pas à pas.</p>",
+            "content": "<p><strong>Livraison 100 % gratuite en France métropolitaine.</strong> Votre commande est préparée sous 24 à 48 h puis livrée sous 3 à 7 jours ouvrés, avec numéro de suivi communiqué par e-mail. Retours acceptés pendant 30 jours après réception : contactez-nous et nous vous guidons pas à pas.</p>",
             "page": ""
           }
         },
@@ -106,6 +106,12 @@
           "settings": {
             "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<div class=\"relax-payments\">\n  <span class=\"relax-payments__label\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'lock' %}</span> Paiement 100 % sécurisé — cryptage SSL</span>\n  <div class=\"relax-payments__icons\">\n    {%- assign relax_payment_types = 'visa,master,cartes_bancaires,american_express,paypal,apple_pay,google_pay' | split: ',' -%}\n    {%- for type in relax_payment_types -%}\n      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}\n    {%- endfor -%}\n  </div>\n</div>"
           }
+        },
+        "promo": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n{%- assign v = product.selected_or_first_available_variant -%}\n{%- if v.compare_at_price > v.price -%}\n  {%- assign saving = v.compare_at_price | minus: v.price -%}\n  {%- assign pct = saving | times: 100.0 | divided_by: v.compare_at_price | round -%}\n  <div class=\"relax-promo\">\n    <span class=\"relax-promo__badge\">−{{ pct }} %</span>\n    <span class=\"relax-promo__text\">Offre de lancement : vous économisez {{ saving | money }} aujourd'hui</span>\n  </div>\n{%- endif -%}\n<p class=\"relax-shipping-note\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'truck' %}</span> Livraison 100 % GRATUITE — chez vous sous 3 à 7 jours ouvrés</p>"
+          }
         }
       },
       "block_order": [
@@ -113,6 +119,7 @@
         "title",
         "caption",
         "price",
+        "promo",
         "usp",
         "inventory",
         "variant_picker",
