@@ -180,18 +180,6 @@
     "temoignages": {
       "type": "relax-testimonials",
       "blocks": {
-        "avis-1": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "title": "Je ne pensais pas que ça marcherait aussi bien",
-            "quote": "Franchement, j'étais sceptique : à ce prix, je m'attendais à un gadget. La première séance surprend, les impulsions picotent un peu, puis on trouve son réglage (moi c'est le mode 3, intensité 8) et là c'est un vrai relâchement. Je travaille 8 h par jour sur écran et mes fins de journée n'ont plus rien à voir. Je l'utilise en préparant le dîner, il tient tout seul.",
-            "author": "Claire M.",
-            "meta": "Télétravail — Lyon",
-            "date": "Il y a 2 semaines",
-            "verified": true
-          }
-        },
         "avis-2": {
           "type": "testimonial",
           "settings": {
@@ -231,18 +219,6 @@
             "photo": "shopify://shop_images/avis-client-5.png"
           }
         },
-        "avis-5": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 4,
-            "title": "Discret au bureau, il me suit partout",
-            "quote": "Je l'utilise à la pause déjeuner au bureau : silencieux, personne ne remarque rien. Le seul reproche, c'est l'absence de pochette de transport, je le mets dans une trousse. À part ça, il tient bien en place même quand je marche et la batterie dure des semaines.",
-            "author": "Marc D.",
-            "meta": "Paris",
-            "date": "Il y a 1 mois",
-            "verified": true
-          }
-        },
         "avis-6": {
           "type": "testimonial",
           "settings": {
@@ -268,29 +244,14 @@
             "verified": true,
             "photo": "shopify://shop_images/avis-client-3.png"
           }
-        },
-        "avis-8": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "title": "SAV au top, et le produit suit",
-            "quote": "J'avais une question sur le mode chaleur avant de commander, réponse claire en quelques heures, en français. Le masseur est arrivé en trois jours. Après un mois d'utilisation quotidienne avec ma femme (chacun sa séance !), aucune baisse de régime. On recommande.",
-            "author": "Patrick G.",
-            "meta": "Strasbourg",
-            "date": "Il y a 2 mois",
-            "verified": true
-          }
         }
       },
       "block_order": [
-        "avis-1",
         "avis-2",
         "avis-3",
         "avis-4",
-        "avis-5",
         "avis-6",
-        "avis-7",
-        "avis-8"
+        "avis-7"
       ],
       "settings": {
         "eyebrow": "Ils l'ont adopté",
@@ -299,8 +260,8 @@
         "show_summary": true,
         "summary_average": "4,8",
         "summary_count": "Basé sur les avis affichés ci-dessous",
-        "bar_5": 75,
-        "bar_4": 25,
+        "bar_5": 80,
+        "bar_4": 20,
         "bar_3": 0,
         "bar_2": 0,
         "bar_1": 0,
