@@ -1,0 +1,415 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "Automassage ciblé — nuque, épaules, pieds",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title"
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price"
+        },
+        "promo": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n{%- assign v = product.selected_or_first_available_variant -%}\n{%- if v.compare_at_price > v.price -%}\n  {%- assign saving = v.compare_at_price | minus: v.price -%}\n  {%- assign pct = saving | times: 100.0 | divided_by: v.compare_at_price | round -%}\n  <div class=\"relax-promo\">\n    <span class=\"relax-promo__badge\">−{{ pct }} %</span>\n    <span class=\"relax-promo__text\">Offre de lancement : vous économisez {{ saving | money }} aujourd'hui</span>\n  </div>\n{%- endif -%}\n<p class=\"relax-shipping-note\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'truck' %}</span> Livraison 100 % GRATUITE — chez vous sous 3 à 7 jours ouvrés</p>"
+          }
+        },
+        "usp": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<ul class=\"relax-usp\">\n  <li><strong>Pression ciblée exactement là où ça tire</strong></li>\n  <li>Forme tripode ergonomique : la main ne force jamais</li>\n  <li>Nuque, épaules, trapèzes, voûte plantaire</li>\n  <li>Sans pile, sans câble — utilisable partout, tout de suite</li>\n  <li>Garantie 30 jours satisfait ou remboursé</li>\n</ul>"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "payments": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<div class=\"relax-payments\">\n  <span class=\"relax-payments__label\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'lock' %}</span> Paiement 100 % sécurisé — cryptage SSL</span>\n  <div class=\"relax-payments__icons\">\n    {%- assign relax_payment_types = 'visa,master,cartes_bancaires,american_express,paypal,apple_pay,google_pay' | split: ',' -%}\n    {%- for type in relax_payment_types -%}\n      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}\n    {%- endfor -%}\n  </div>\n</div>"
+          }
+        },
+        "reassurance": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "Livraison GRATUITE — 3 à 7 jours ouvrés",
+            "icon_2": "return",
+            "heading_2": "30 jours satisfait ou remboursé",
+            "icon_3": "lock",
+            "heading_3": "Paiement 100 % sécurisé"
+          }
+        },
+        "description": {
+          "type": "description"
+        },
+        "tab-caracteristiques": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Caractéristiques techniques",
+            "icon": "clipboard",
+            "content": "<ul><li>Forme tripode à trois points d'appui</li><li>Surface douce, agréable au contact de la peau</li><li>Format compact : tient dans la paume et dans un sac</li><li>Aucune pile, aucun câble, aucun entretien particulier</li><li>Nettoyage à l'eau savonneuse</li></ul>",
+            "page": ""
+          }
+        },
+        "tab-livraison": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Livraison & retours",
+            "icon": "truck",
+            "content": "<p><strong>Livraison 100 % gratuite en France métropolitaine.</strong> Votre commande est préparée sous 24 à 48 h puis livrée sous 3 à 7 jours ouvrés, avec numéro de suivi communiqué par e-mail. Retours acceptés pendant 30 jours après réception : contactez-nous et nous vous guidons pas à pas.</p>",
+            "page": ""
+          }
+        },
+        "tab-garantie": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Garantie 30 jours",
+            "icon": "check_mark",
+            "content": "<p>Essayez votre boule de massage Relaxialis pendant 30 jours. Si elle ne vous convient pas, nous vous remboursons intégralement, sans justification à fournir.</p>",
+            "page": ""
+          }
+        },
+        "tab-utilisation": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Conseils d'utilisation",
+            "icon": "heart",
+            "content": "<p>Posez l'un des trois appuis sur le point de tension, exercez une pression douce puis faites de petits cercles lents pendant 30 à 60 secondes par zone. Commencez léger : c'est la régularité, pas la force, qui détend. Évitez les zones blessées ou inflammées. Accessoire de bien-être : ne remplace pas un avis médical.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "title",
+        "caption",
+        "price",
+        "promo",
+        "usp",
+        "inventory",
+        "variant_picker",
+        "buy_buttons",
+        "payments",
+        "reassurance",
+        "description",
+        "tab-caracteristiques",
+        "tab-livraison",
+        "tab-garantie",
+        "tab-utilisation"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "demo": {
+      "type": "image-with-text",
+      "blocks": {
+        "demo-caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "En situation",
+            "text_style": "caption_with_letter_spacing",
+            "text_size": "medium"
+          }
+        },
+        "demo-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Le geste que votre main fait déjà — en mieux",
+            "heading_size": "h1"
+          }
+        },
+        "demo-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Quand la nuque tire, on la masse instinctivement avec les doigts… et la main fatigue avant que la tension parte. La boule Relaxialis fait le même geste avec un appui stable et précis : posez, pressez, faites de petits cercles. La zone se relâche, pas votre main.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "demo-caption",
+        "demo-heading",
+        "demo-text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/relaxialis-boule-usage.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "benefices": {
+      "type": "relax-benefits",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pulse",
+            "heading": "Pression ciblée",
+            "text": "Chaque appui concentre la pression sur le point exact où la tension s'est installée."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lotus",
+            "heading": "Tout le corps",
+            "text": "Nuque, épaules, trapèzes, dos, voûte plantaire : une seule boule pour toutes les zones."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "heading": "2 minutes suffisent",
+            "text": "30 à 60 secondes par zone, quand vous voulez : aucune préparation, aucun réglage."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "feather",
+            "heading": "Zéro contrainte",
+            "text": "Sans pile ni câble, elle vit dans votre sac, sur le bureau ou près du canapé."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi vous allez l'adorer",
+        "heading": "Petite boule, grands effets",
+        "heading_size": "h1",
+        "subheading": "",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "etapes": {
+      "type": "relax-steps",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "heading": "Saisissez-la",
+            "text": "La forme tripode se cale naturellement dans la paume, sans effort de préhension."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "heading": "Posez l'appui sur la tension",
+            "text": "Nuque, épaule, trapèze ou voûte plantaire : appuyez doucement, la pression fait le travail."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "heading": "Faites de petits cercles",
+            "text": "30 à 60 secondes de mouvements lents par zone, et la tension se relâche."
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "eyebrow": "Simple comme bonjour",
+        "heading": "Comment ça marche ?",
+        "heading_size": "h1",
+        "subheading": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "chiffres": {
+      "type": "relax-stats",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "3 appuis",
+            "label": "pour une prise en main naturelle"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "0 pile",
+            "label": "utilisable partout, immédiatement"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "30 jours",
+            "label": "satisfait ou remboursé"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "footnote": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Sur quelles zones puis-je l'utiliser ?",
+            "icon": "question_mark",
+            "row_content": "<p>Nuque, épaules, trapèzes, haut du dos, avant-bras, mollets et voûte plantaire. Sa taille compacte lui permet d'atteindre les zones précises qu'un gros appareil ne peut pas cibler.</p>",
+            "page": ""
+          }
+        },
+        "faq-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Faut-il appuyer fort ?",
+            "icon": "question_mark",
+            "row_content": "<p>Non. Une pression douce et des cercles lents suffisent : c'est la précision de l'appui qui agit, pas la force. Augmentez progressivement selon votre ressenti, sans jamais aller jusqu'à la douleur.</p>",
+            "page": ""
+          }
+        },
+        "faq-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les délais de livraison ?",
+            "icon": "question_mark",
+            "row_content": "<p>Préparation sous 24 à 48 h puis livraison suivie sous 3 à 7 jours ouvrés. Vous recevez un e-mail à chaque étape de votre commande.</p>",
+            "page": ""
+          }
+        },
+        "faq-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Et si le produit ne me convient pas ?",
+            "icon": "question_mark",
+            "row_content": "<p>Vous avez 30 jours après réception pour changer d'avis et être intégralement remboursé.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "settings": {
+        "caption": "Questions fréquentes",
+        "heading": "Encore une hésitation ?",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "garantie": {
+      "type": "relax-guarantee",
+      "settings": {
+        "icon": "shield",
+        "heading": "30 jours pour l'essayer, zéro risque",
+        "heading_size": "h1",
+        "text": "<p>Testez votre boule de massage Relaxialis tranquillement chez vous pendant 30 jours. Si elle ne vous convient pas, renvoyez-la : nous vous remboursons intégralement, sans discuter.</p>",
+        "button_label": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "sticky-atc": {
+      "type": "relax-sticky-atc",
+      "settings": {
+        "button_label": "Ajouter au panier"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "demo",
+    "benefices",
+    "etapes",
+    "chiffres",
+    "faq",
+    "garantie",
+    "sticky-atc"
+  ]
+}

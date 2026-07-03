@@ -1,0 +1,415 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "Micro-impulsions EMS — format de poche",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title"
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "price": {
+          "type": "price"
+        },
+        "promo": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n{%- assign v = product.selected_or_first_available_variant -%}\n{%- if v.compare_at_price > v.price -%}\n  {%- assign saving = v.compare_at_price | minus: v.price -%}\n  {%- assign pct = saving | times: 100.0 | divided_by: v.compare_at_price | round -%}\n  <div class=\"relax-promo\">\n    <span class=\"relax-promo__badge\">−{{ pct }} %</span>\n    <span class=\"relax-promo__text\">Offre de lancement : vous économisez {{ saving | money }} aujourd'hui</span>\n  </div>\n{%- endif -%}\n<p class=\"relax-shipping-note\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'truck' %}</span> Livraison 100 % GRATUITE — chez vous sous 3 à 7 jours ouvrés</p>"
+          }
+        },
+        "usp": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<ul class=\"relax-usp\">\n  <li><strong>La détente EMS qui tient dans une poche</strong></li>\n  <li>8 modes de massage, 19 niveaux d'intensité</li>\n  <li>Télécommande sans fil : réglez sans vous contorsionner</li>\n  <li>Nuque, épaules, lombaires, mollets — il se pose partout</li>\n  <li>Garantie 30 jours satisfait ou remboursé</li>\n</ul>"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "payments": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'relax.css' | asset_url | stylesheet_tag }}\n<div class=\"relax-payments\">\n  <span class=\"relax-payments__label\"><span class=\"relax-icon\">{% render 'relax-icon', icon: 'lock' %}</span> Paiement 100 % sécurisé — cryptage SSL</span>\n  <div class=\"relax-payments__icons\">\n    {%- assign relax_payment_types = 'visa,master,cartes_bancaires,american_express,paypal,apple_pay,google_pay' | split: ',' -%}\n    {%- for type in relax_payment_types -%}\n      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}\n    {%- endfor -%}\n  </div>\n</div>"
+          }
+        },
+        "reassurance": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "Livraison GRATUITE — 3 à 7 jours ouvrés",
+            "icon_2": "return",
+            "heading_2": "30 jours satisfait ou remboursé",
+            "icon_3": "lock",
+            "heading_3": "Paiement 100 % sécurisé"
+          }
+        },
+        "description": {
+          "type": "description"
+        },
+        "tab-caracteristiques": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Caractéristiques techniques",
+            "icon": "clipboard",
+            "content": "<ul><li>Technologie : micro-impulsions EMS</li><li>8 modes de massage et 19 niveaux d'intensité</li><li>Patch souple ultra-fin + unité de contrôle compacte</li><li>Télécommande sans fil avec écran</li><li>Batterie rechargeable par USB (câble fourni)</li><li>Arrêt automatique en fin de séance</li></ul>",
+            "page": ""
+          }
+        },
+        "tab-livraison": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Livraison & retours",
+            "icon": "truck",
+            "content": "<p><strong>Livraison 100 % gratuite en France métropolitaine.</strong> Votre commande est préparée sous 24 à 48 h puis livrée sous 3 à 7 jours ouvrés, avec numéro de suivi communiqué par e-mail. Retours acceptés pendant 30 jours après réception : contactez-nous et nous vous guidons pas à pas.</p>",
+            "page": ""
+          }
+        },
+        "tab-garantie": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Garantie 30 jours",
+            "icon": "check_mark",
+            "content": "<p>Essayez votre mini masseur EMS Relaxialis pendant 30 jours. S'il ne vous convient pas, nous vous remboursons intégralement, sans justification à fournir.</p>",
+            "page": ""
+          }
+        },
+        "tab-utilisation": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Conseils d'utilisation",
+            "icon": "heart",
+            "content": "<p>Posez le patch sur une peau propre et sèche, allumez l'appareil et commencez toujours par l'intensité la plus basse. Une séance de 10 à 15 minutes par zone suffit. Pour préserver l'adhérence du patch, passez-le brièvement sous l'eau claire de temps en temps et laissez-le sécher à l'air libre. Déconseillé aux porteurs de stimulateur cardiaque ou d'implant électronique, aux femmes enceintes et en cas de problème de peau sur la zone. Appareil de bien-être : ne remplace pas un avis médical.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "badge",
+        "title",
+        "caption",
+        "price",
+        "promo",
+        "usp",
+        "inventory",
+        "variant_picker",
+        "buy_buttons",
+        "payments",
+        "reassurance",
+        "description",
+        "tab-caracteristiques",
+        "tab-livraison",
+        "tab-garantie",
+        "tab-utilisation"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "demo": {
+      "type": "image-with-text",
+      "blocks": {
+        "demo-caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "En situation",
+            "text_style": "caption_with_letter_spacing",
+            "text_size": "medium"
+          }
+        },
+        "demo-heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Il se pose, il se fait oublier, il travaille",
+            "heading_size": "h1"
+          }
+        },
+        "demo-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Placez le patch à la base de la nuque, sur l'épaule ou les lombaires, prenez la télécommande et choisissez votre mode. Les micro-impulsions font travailler la zone pendant que vous lisez, cuisinez ou terminez votre journée. À peine visible sous un vêtement.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "demo-caption",
+        "demo-heading",
+        "demo-text"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/relaxialis-miniems-usage.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "benefices": {
+      "type": "relax-benefits",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pulse",
+            "heading": "8 modes, 19 intensités",
+            "text": "Du tapotement léger au pétrissage profond : chacun trouve son réglage."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lotus",
+            "heading": "Toutes les zones",
+            "text": "Nuque, épaules, lombaires, mollets : le patch souple épouse chaque zone."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "clock",
+            "heading": "Mains libres",
+            "text": "Il masse pendant que vous vivez votre soirée — la télécommande règle tout."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "feather",
+            "heading": "Ultra nomade",
+            "text": "Format de poche, recharge USB : bureau, train, valise, il vous suit partout."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi vous allez l'adorer",
+        "heading": "Le plus petit des masseurs sérieux",
+        "heading_size": "h1",
+        "subheading": "",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "etapes": {
+      "type": "relax-steps",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "heading": "Posez le patch",
+            "text": "Sur une peau propre et sèche : nuque, épaule, lombaires ou mollet."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "heading": "Choisissez votre mode",
+            "text": "8 modes et 19 niveaux d'intensité, réglables du bout des doigts avec la télécommande."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "heading": "Laissez agir",
+            "text": "10 à 15 minutes de micro-impulsions, puis l'appareil s'arrête tout seul."
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "eyebrow": "Simple comme bonjour",
+        "heading": "Comment ça marche ?",
+        "heading_size": "h1",
+        "subheading": "",
+        "color_scheme": "scheme-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "chiffres": {
+      "type": "relax-stats",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "8 modes",
+            "label": "de massage au choix"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "19 niveaux",
+            "label": "d'intensité réglables"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "30 jours",
+            "label": "satisfait ou remboursé"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "footnote": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Que ressent-on pendant la séance ?",
+            "icon": "question_mark",
+            "row_content": "<p>Un léger picotement puis une sensation de tapotement ou de pétrissage selon le mode choisi. L'intensité se règle finement sur 19 niveaux : commencez toujours au plus bas.</p>",
+            "page": ""
+          }
+        },
+        "faq-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Y a-t-il des contre-indications ?",
+            "icon": "question_mark",
+            "row_content": "<p>Déconseillé aux porteurs de stimulateur cardiaque ou d'implant électronique, aux femmes enceintes et en cas de problème cardiaque ou de peau sur la zone d'application. En cas de doute, demandez conseil à un professionnel de santé.</p>",
+            "page": ""
+          }
+        },
+        "faq-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Le patch perd-il son adhérence ?",
+            "icon": "question_mark",
+            "row_content": "<p>Utilisez-le sur une peau propre et sèche et son adhérence dure longtemps. Si elle diminue, passez le patch brièvement sous l'eau claire et laissez-le sécher à l'air libre : il retrouve son accroche.</p>",
+            "page": ""
+          }
+        },
+        "faq-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Et si le produit ne me convient pas ?",
+            "icon": "question_mark",
+            "row_content": "<p>Vous avez 30 jours après réception pour changer d'avis et être intégralement remboursé.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4"
+      ],
+      "settings": {
+        "caption": "Questions fréquentes",
+        "heading": "Encore une hésitation ?",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "garantie": {
+      "type": "relax-guarantee",
+      "settings": {
+        "icon": "shield",
+        "heading": "30 jours pour l'essayer, zéro risque",
+        "heading_size": "h1",
+        "text": "<p>Testez votre mini masseur EMS Relaxialis tranquillement chez vous pendant 30 jours. S'il ne vous convient pas, renvoyez-le : nous vous remboursons intégralement, sans discuter.</p>",
+        "button_label": "",
+        "color_scheme": "scheme-3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "sticky-atc": {
+      "type": "relax-sticky-atc",
+      "settings": {
+        "button_label": "Ajouter au panier"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "demo",
+    "benefices",
+    "etapes",
+    "chiffres",
+    "faq",
+    "garantie",
+    "sticky-atc"
+  ]
+}
