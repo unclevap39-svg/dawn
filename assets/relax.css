@@ -874,3 +874,41 @@ body.relax-sticky-atc-active {
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
 }
+
+/* ── Menu burger : boutons icône Accueil / Contact ── */
+.relax-menu-quicklinks {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.relax-menu-quicklink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 50%;
+  background: #ECF3EF;
+  color: #1F4A42;
+  box-shadow: 0 2px 8px rgba(31, 74, 66, 0.14);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.relax-menu-quicklink svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.relax-menu-quicklink:hover,
+.relax-menu-quicklink:active {
+  background: #1F4A42;
+  color: #FDFBF7;
+  transform: scale(0.96);
+}
+.menu-drawer-container[open] .relax-menu-quicklinks {
+  animation: relaxMenuIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-drawer-container[open] .relax-menu-quicklinks {
+    animation: none;
+  }
+}
