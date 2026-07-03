@@ -150,7 +150,7 @@
         "demo-caption": {
           "type": "caption",
           "settings": {
-            "caption": "En situation",
+            "caption": "En démonstration",
             "text_style": "caption_with_letter_spacing",
             "text_size": "medium"
           }
@@ -176,7 +176,7 @@
         "demo-text"
       ],
       "settings": {
-        "image": "shopify://shop_images/relaxialis-oreiller-usage.png",
+        "image": "shopify://shop_images/relaxialis-oreiller-demo.gif",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
