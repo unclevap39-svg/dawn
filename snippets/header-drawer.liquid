@@ -19,9 +19,77 @@
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
+          {{ 'relax.css' | asset_url | stylesheet_tag }}
+          <div class="relax-menu-visual">
+            <a href="/products/masseur-cervical-relaxialis" class="relax-menu-card relax-menu-card--hero focus-inset">
+              <img
+                src="{{ 'relaxialis-menu-hero.png' | file_img_url: '900x' }}"
+                alt="Masseur cervical Relaxialis"
+                width="900"
+                height="506"
+                loading="lazy"
+              >
+              <span class="relax-menu-card__badge">Best-seller</span>
+              <span class="relax-menu-card__label">
+                <span class="relax-menu-card__title">Le masseur cervical</span>
+                <span class="relax-menu-card__sub">EMS + chaleur douce — 15 min par jour</span>
+              </span>
+            </a>
+            <div class="relax-menu-grid">
+              <a href="/products/boule-de-massage" class="relax-menu-card focus-inset">
+                <img
+                  src="{{ 'relaxialis-menu-boule.png' | file_img_url: '450x' }}"
+                  alt="Boule de massage Relaxialis"
+                  width="450"
+                  height="450"
+                  loading="lazy"
+                >
+                <span class="relax-menu-card__label">
+                  <span class="relax-menu-card__title">Boule de massage</span>
+                </span>
+              </a>
+              <a href="/products/oreiller-cervical" class="relax-menu-card focus-inset">
+                <img
+                  src="{{ 'relaxialis-menu-oreiller.png' | file_img_url: '450x' }}"
+                  alt="Oreiller cervical Relaxialis"
+                  width="450"
+                  height="450"
+                  loading="lazy"
+                >
+                <span class="relax-menu-card__label">
+                  <span class="relax-menu-card__title">Oreiller cervical</span>
+                </span>
+              </a>
+              <a href="/products/mini-masseur-ems" class="relax-menu-card focus-inset">
+                <img
+                  src="{{ 'relaxialis-menu-miniems.png' | file_img_url: '450x' }}"
+                  alt="Mini masseur EMS Relaxialis"
+                  width="450"
+                  height="450"
+                  loading="lazy"
+                >
+                <span class="relax-menu-card__label">
+                  <span class="relax-menu-card__title">Mini masseur EMS</span>
+                </span>
+              </a>
+              <a href="/products/masseur-visage-cou" class="relax-menu-card focus-inset">
+                <img
+                  src="{{ 'relaxialis-menu-visage.png' | file_img_url: '450x' }}"
+                  alt="Masseur visage et cou Relaxialis"
+                  width="450"
+                  height="450"
+                  loading="lazy"
+                >
+                <span class="relax-menu-card__label">
+                  <span class="relax-menu-card__title">Masseur visage &amp; cou</span>
+                </span>
+              </a>
+            </div>
+          </div>
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+                {%- if link.url contains '/products/' -%}{%- continue -%}{%- endif -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
