@@ -913,3 +913,34 @@ body.relax-sticky-atc-active {
     animation: none;
   }
 }
+
+/* ── Page produit : lien étoiles sous le titre, taxes masquées ── */
+.product__tax {
+  display: none;
+}
+.relax-rating-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.2rem 0 0.4rem;
+  color: inherit;
+  text-decoration: none;
+}
+.relax-rating-link .relax-stars-row {
+  display: flex;
+  gap: 0.2rem;
+  color: #F5A623;
+}
+.relax-rating-link .relax-stars-row svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.relax-rating-link__text {
+  font-size: 1.4rem;
+}
+.relax-rating-link:hover .relax-rating-link__text {
+  text-decoration: underline;
+}
+html {
+  scroll-behavior: smooth;
+}
